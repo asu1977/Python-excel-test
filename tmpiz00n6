@@ -1,0 +1,4 @@
+
+import rope.base.project
+myproject = rope.base.project.Project('C:/Python_Test/xml')
+myproject.close()

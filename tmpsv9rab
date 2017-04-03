@@ -1,0 +1,15 @@
+
+import rope.base.project
+from rope.base import libutils
+
+myproject = rope.base.project.Project(
+    'C:/Python_Test/xml')
+#myproject.validate('C:/Python_Test/xml/phone_excel.py')
+myproject.validate()
+ropy = libutils.path_to_resource(myproject, 'C:/Python_Test/xml/phone_excel.py')
+
+from rope.refactor.rename import Rename
+changes = Rename(myproject, ropy, 14).get_changes('str', docs=True)
+myproject.do(changes)
+
+myproject.close()
